@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+    <title>Calculadora - Miguel Fuentes Hernández</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>MIGUEL FUENTES HERNANDEZ</h1>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="user-name">MIGUEL FUENTES HERNÁNDEZ</h1>
+            <p class="subtitle">Calculadora Interactiva</p>
+        </header>
+
+        <main class="calculator-card">
+            <div class="calculator-display">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+            
+            <div class="calculator-grid">
+                <button class="btn btn-action" data-action="clear" id="btn-clear">AC</button>
+                <button class="btn btn-action" data-action="delete" id="btn-delete">DEL</button>
+                <button class="btn btn-action" data-action="percent" id="btn-percent">%</button>
+                <button class="btn btn-operator" data-operator="÷" id="btn-divide">÷</button>
+                
+                <button class="btn btn-number" data-number="7">7</button>
+                <button class="btn btn-number" data-number="8">8</button>
+                <button class="btn btn-number" data-number="9">9</button>
+                <button class="btn btn-operator" data-operator="×" id="btn-multiply">×</button>
+                
+                <button class="btn btn-number" data-number="4">4</button>
+                <button class="btn btn-number" data-number="5">5</button>
+                <button class="btn btn-number" data-number="6">6</button>
+                <button class="btn btn-operator" data-operator="-" id="btn-subtract">-</button>
+                
+                <button class="btn btn-number" data-number="1">1</button>
+                <button class="btn btn-number" data-number="2">2</button>
+                <button class="btn btn-number" data-number="3">3</button>
+                <button class="btn btn-operator" data-operator="+" id="btn-add">+</button>
+                
+                <button class="btn btn-action" data-action="toggle-sign" id="btn-toggle-sign">±</button>
+                <button class="btn btn-number" data-number="0">0</button>
+                <button class="btn btn-number" data-number=".">.</button>
+                <button class="btn btn-equals" data-action="equals" id="btn-equals">=</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
