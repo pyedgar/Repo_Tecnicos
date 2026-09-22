@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Image\Calculadora.png" />
+</head>
+<body>
+    <form action="">
+        <input type="text" id="num1" placeholder="Ingrese un número">
+        <input type="text" id="num2" placeholder="Ingrese un número">
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+        <button type="button" onclick="Sumar()">Sumar</button>
+        <button type="button" onclick="Restar()">Restar</button>
+        <button type="button" onclick="Multiplicar()">Multiplicar</button>
+        <button type="button" onclick="Dividir()">Dividir</button>
+    </form>
+</body>
+</html>
+
+<script>
+    function obtenerNumeros() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Ingrese números válidos");
+            return null;
+        }
+        return { num1, num2 };
+    }
+
+    function Sumar() {
+        let nums = obtenerNumeros();
+        if (!nums) return;
+        document.getElementById("resultado").value = nums.num1 + nums.num2;
+    }
+
+    function Restar() {
+        let nums = obtenerNumeros();
+        if (!nums) return;
+        document.getElementById("resultado").value = nums.num1 - nums.num2;
+    }
+
+    function Multiplicar() {
+        let nums = obtenerNumeros();
+        if (!nums) return;
+        document.getElementById("resultado").value = nums.num1 * nums.num2;
+    }
+
+    function Dividir() {
+        let nums = obtenerNumeros();
+        if (!nums) return;
+        if (nums.num2 === 0) {
+            alert("No se puede dividir entre cero");
+            return;
+        }
+        document.getElementById("resultado").value = nums.num1 / nums.num2;
+    }
+</script>
