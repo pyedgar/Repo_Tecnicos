@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Técnicos - Inicio</title>
+    <style>
+        /* Estilos generales */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('../carp_edgar/image/fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Capa oscura para que el texto sea legible con el fondo relajante */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Tono oscuro para relajar la vista */
+            z-index: 1;
+        }
+
+        /* Menú animado */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #ffb7c5; /* Tono rosa sakura */
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Contenedor principal */
+        .content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Tarjeta de información del equipo */
+        .team-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Para soporte en Safari */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .team-card h1 {
+            color: #ffb7c5;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .team-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contenedor de hojas de sakura */
+        #sakura-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .sakura {
+            position: absolute;
+            background: #ffb7c5;
+            border-radius: 100% 0 100% 0; /* Forma de pétalo de sakura */
+            opacity: 0.8;
+            animation: fall linear infinite, sway ease-in-out infinite alternate;
+        }
+
+        @keyframes fall {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+        @keyframes sway {
+            0% { transform: translateX(0) rotate(0deg); }
+            100% { transform: translateX(50px) rotate(45deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animación de Sakuras -->
+    <div id="sakura-container"></div>
+
+    <!-- Capa oscura de superposición -->
+    <div class="overlay"></div>
+
+    <!-- Menú animado -->
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#equipo">Nuestro Equipo</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content" id="equipo">
+        <div class="team-card">
+            <h1>Los Técnicos</h1>
+            <p><strong>Universidad Tecnológica de Coahuila</strong></p>
+            <p>Somos un equipo multidisciplinario formado por una excelente combinación de alumnos de los grupos <strong>A</strong> y <strong>B</strong>.</p>
+            <p>Trabajamos con pasión para construir grandes cosas, manteniendo siempre un enfoque colaborativo y un ambiente relajado y creativo.</p>
+        </div>
+    </div>
+
+    <!-- Script para la lluvia de sakuras -->
+    <script>
+        function createSakura() {
+            const container = document.getElementById('sakura-container');
+            const sakura = document.createElement('div');
+            sakura.classList.add('sakura');
+
+            // Propiedades aleatorias para que el flujo sea natural
+            const size = Math.random() * 10 + 10; // Tamaño de 10 a 20 px
+            const left = Math.random() * 100; // Posición horizontal en pantalla
+            const durationFall = Math.random() * 5 + 6; // Velocidad de caída
+            const durationSway = Math.random() * 3 + 2; // Velocidad de balanceo
+            const delay = Math.random() * 5; // Retraso
+
+            sakura.style.width = `${size}px`;
+            sakura.style.height = `${size}px`;
+            sakura.style.left = `${left}vw`;
+            sakura.style.animationDuration = `${durationFall}s, ${durationSway}s`;
+            sakura.style.animationDelay = `${delay}s, ${delay}s`;
+
+            container.appendChild(sakura);
+
+            // Se elimina la hoja después de caer para no saturar la memoria
+            setTimeout(() => {
+                sakura.remove();
+            }, (durationFall + delay) * 1000);
+        }
+
+        // Frecuencia de caída de hojas (menor = más hojas)
+        setInterval(createSakura, 250);
+    </script>
+</body>
+</html>
