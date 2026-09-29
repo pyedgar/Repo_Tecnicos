@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgar Reyes - Portafolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cyber-header">
+        <h1><i class="fas fa-terminal"></i> PORTAFOLIO DEL SISTEMA</h1>
+        <nav class="cyber-nav">
+            <a href="#about"><i class="fas fa-user-astronaut"></i> Sobre Mí</a>
+            <a href="#projects"><i class="fas fa-project-diagram"></i> Trabajos</a>
+            <a href="#calculator-sec"><i class="fas fa-calculator"></i> Calculadora</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="about" class="glass-panel fade-in">
+            <h2 class="neon-text"><i class="fas fa-user-astronaut"></i> Sobre Mí</h2>
+            <p>¡Hola! Soy un desarrollador apasionado por crear cosas increíbles en la web, integrando interfaces modernas con lógica robusta.</p>
+            <div class="computer-container">
+                <div class="computer">
+                    <div class="screen">
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                    </div>
+                    <div class="keyboard"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="glass-panel fade-in">
+            <h2 class="neon-text"><i class="fas fa-project-diagram"></i> Mis Trabajos</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-id-badge"></i> Perfil Tecnológico</h3>
+                    <p>Mi primer trabajo, una página interactiva sobre mí y mis tecnologías.</p>
+                    <div class="project-links">
+                        <a href="../cusos lunes/index.html" class="cyber-button"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator-sec" class="glass-panel fade-in">
+            <h2 class="neon-text"><i class="fas fa-calculator"></i> Calculadora de Interfaz</h2>
+            <div class="calculator">
+                <input type="text" id="display" disabled>
+                <div class="keys">
+                    <button onclick="appendValue('7')">7</button>
+                    <button onclick="appendValue('8')">8</button>
+                    <button onclick="appendValue('9')">9</button>
+                    <button onclick="setOperation('/')" class="op-btn">/</button>
+                    <button onclick="appendValue('4')">4</button>
+                    <button onclick="appendValue('5')">5</button>
+                    <button onclick="appendValue('6')">6</button>
+                    <button onclick="setOperation('*')" class="op-btn">*</button>
+                    <button onclick="appendValue('1')">1</button>
+                    <button onclick="appendValue('2')">2</button>
+                    <button onclick="appendValue('3')">3</button>
+                    <button onclick="setOperation('-')" class="op-btn">-</button>
+                    <button onclick="appendValue('0')">0</button>
+                    <button onclick="clearDisplay()" class="clear-btn">C</button>
+                    <button onclick="calculateResult()" class="eval-btn">=</button>
+                    <button onclick="setOperation('+')" class="op-btn">+</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
