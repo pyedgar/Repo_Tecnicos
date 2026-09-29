@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora | Fátima Estefanía</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Cinzel Decorative', cursive;
+    }
+
+    h1 {
+      color: #ffd700;
+      font-size: 2.5em;
+      text-shadow: 3px 3px 8px #000;
+      background: rgba(0,0,0,0.6);
+      padding: 15px 30px;
+      border-radius: 12px;
+      border: 2px solid #ffd700;
+      margin-bottom: 20px;
+    }
+
+    .calculator {
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 15px;
+      color: #f5deb3;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,215,0,0.8);
+      border: 2px solid #ffd700;
+      width: 300px;
+    }
+
+    .calculator h2 {
+      margin-bottom: 15px;
+      color: #ffd700;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    input {
+      margin: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 2px solid #ffd700;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 1em;
+      width: 80%;
+    }
+
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4e342e, #8d6e63);
+      color: #ffd700;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      font-family: 'Cinzel Decorative', cursive;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      color: #000;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #ffd700;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.3em;
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px dashed #ffd700;
+      animation: aparecer 0.5s ease;
+    }
+
+    @keyframes aparecer {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <h1>FÁTIMA ESTEFANÍA GONZÁLEZ LOZANO</h1>
+
+  <div class="calculator">
+    <h2>Calculadora básica</h2>
+    <p>PRIMER NÚMERO</p>
+    <input type="number" id="num1" placeholder="Número 1">
+    <p>SEGUNDO NÚMERO</p>
+    <input type="number" id="num2" placeholder="Número 2"><br><br>
+
+    <button onclick="sumar()">➕ Sumar</button>
+    <button onclick="restar()">➖ Restar</button>
+    <button onclick="multiplicar()">✴ Multiplicar</button>
+    <button onclick="dividir()">➗ Dividir</button>
+    <button onclick="limpiar()">↻ Limpiar</button>
+
+    <p id="resultado">El resultado aparecerá aquí</p>
+  </div>
+
+  <script>
+    function sumar() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("resultado").innerText = "Resultado: " + (n1 + n2);
+    }
+
+    function restar() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("resultado").innerText = "Resultado: " + (n1 - n2);
+    }
+
+    function multiplicar() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("resultado").innerText = "Resultado: " + (n1 * n2);
+    }
+
+    function dividir() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      if (n2 === 0) {
+        document.getElementById("resultado").innerText = "Error: división entre 0";
+      } else {
+        document.getElementById("resultado").innerText = "Resultado: " + (n1 / n2);
+      }
+    }
+
+    function limpiar() {
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("resultado").innerText = "El resultado aparecerá aquí";
+    }
+  </script>
+</body>
+</html>
