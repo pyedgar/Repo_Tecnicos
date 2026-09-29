@@ -8,14 +8,15 @@
     <link rel="icon" type="image/png" href="Image\Calculadora.png" />
 </head>
 <body>
+    <a href="../index.html" style="position: fixed; top: 20px; left: 20px; background-color: rgba(10, 20, 40, 0.8); color: #00f3ff; padding: 12px 20px; text-decoration: none; border-radius: 8px; z-index: 1000; font-family: sans-serif; font-weight: bold; border: 1px solid #00f3ff; transition: all 0.3s; box-shadow: 0 0 10px rgba(0,243,255,0.3);" onmouseover="this.style.background='#00f3ff'; this.style.color='#000'; this.style.boxShadow='0 0 20px #00f3ff'" onmouseout="this.style.background='rgba(10, 20, 40, 0.8)'; this.style.color='#00f3ff'; this.style.boxShadow='0 0 10px rgba(0,243,255,0.3)'">⬅ Volver al Portafolio</a>
     <form action="">
         <input type="text" id="num1" placeholder="Ingrese un número">
         <input type="text" id="num2" placeholder="Ingrese un número">
         <input type="text" id="resultado" placeholder="Resultado" readonly>
-        <button type="button" onclick="Sumar()">Sumar</button>
-        <button type="button" onclick="Restar()">Restar</button>
-        <button type="button" onclick="Multiplicar()">Multiplicar</button>
-        <button type="button" onclick="Dividir()">Dividir</button>
+        <button type="button" onclick="calcular('+')">Sumar</button>
+        <button type="button" onclick="calcular('-')">Restar</button>
+        <button type="button" onclick="calcular('*')">Multiplicar</button>
+        <button type="button" onclick="calcular('/')">Dividir</button>
     </form>
 </body>
 </html>
@@ -31,31 +32,23 @@
         return { num1, num2 };
     }
 
-    function Sumar() {
+    function calcular(operacion) {
         let nums = obtenerNumeros();
         if (!nums) return;
-        document.getElementById("resultado").value = nums.num1 + nums.num2;
-    }
-
-    function Restar() {
-        let nums = obtenerNumeros();
-        if (!nums) return;
-        document.getElementById("resultado").value = nums.num1 - nums.num2;
-    }
-
-    function Multiplicar() {
-        let nums = obtenerNumeros();
-        if (!nums) return;
-        document.getElementById("resultado").value = nums.num1 * nums.num2;
-    }
-
-    function Dividir() {
-        let nums = obtenerNumeros();
-        if (!nums) return;
-        if (nums.num2 === 0) {
-            alert("No se puede dividir entre cero");
-            return;
+        
+        let resultado = 0;
+        switch (operacion) {
+            case '+': resultado = nums.num1 + nums.num2; break;
+            case '-': resultado = nums.num1 - nums.num2; break;
+            case '*': resultado = nums.num1 * nums.num2; break;
+            case '/':
+                if (nums.num2 === 0) {
+                    alert("No se puede dividir entre cero");
+                    return;
+                }
+                resultado = nums.num1 / nums.num2;
+                break;
         }
-        document.getElementById("resultado").value = nums.num1 / nums.num2;
+        document.getElementById("resultado").value = resultado;
     }
 </script>

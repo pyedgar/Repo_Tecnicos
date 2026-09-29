@@ -51,16 +51,22 @@
             margin: 0 20px;
         }
         nav ul li a {
-            color: #ffb7c5; /* Tono rosa sakura */
+            color: #fff;
+            background: rgba(255, 183, 197, 0.2); /* Tono rosa sakura semi-transparente */
+            border: 1px solid #ffb7c5;
+            padding: 8px 16px;
+            border-radius: 20px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
             display: inline-block;
         }
         nav ul li a:hover {
-            color: #fff;
+            background: #ffb7c5;
+            color: #000;
             transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 183, 197, 0.8);
         }
 
         /* Contenedor principal */
@@ -148,9 +154,11 @@
     <nav>
         <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#equipo">Nuestro Equipo</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="../carp_edgar/index.html" class="nav-btn">Edgar</a></li>
+            <li><a href="../cap_Fatima/index.html" class="nav-btn">Fátima</a></li>
+            <li><a href="../carp_Kenia/index.html" class="nav-btn">Kenia</a></li>
+            <li><a href="../carp_Ramiro/index.html" class="nav-btn">Ramiro</a></li>
+            <li><a href="../Carp_Miguel/index.html" class="nav-btn">Miguel</a></li>
         </ul>
     </nav>
 
@@ -161,6 +169,16 @@
             <p><strong>Universidad Tecnológica de Coahuila</strong></p>
             <p>Somos un equipo multidisciplinario formado por una excelente combinación de alumnos de los grupos <strong>A</strong> y <strong>B</strong>.</p>
             <p>Trabajamos con pasión para construir grandes cosas, manteniendo siempre un enfoque colaborativo y un ambiente relajado y creativo.</p>
+            <div class="team-members">
+                <h3 style="color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Nuestros Portafolios:</h3>
+                <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 1.1rem;">
+                    <li><a href="../carp_edgar/index.html" style="color: #ffb7c5; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffb7c5'">Edgar Reyes de la Cruz</a></li>
+                    <li><a href="../cap_Fatima/index.html" style="color: #ffb7c5; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffb7c5'">FATIMA ESTEFANIA GONZALEZ LOZANO</a></li>
+                    <li><a href="../carp_Kenia/index.html" style="color: #ffb7c5; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffb7c5'">KENIA ISAMARA ANDRADE CEDILLO</a></li>
+                    <li><a href="../carp_Ramiro/index.html" style="color: #ffb7c5; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffb7c5'">RAMIRO ALEJANDRO ALFARO ALANIS</a></li>
+                    <li><a href="../Carp_Miguel/index.html" style="color: #ffb7c5; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ffb7c5'">Miguel</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
