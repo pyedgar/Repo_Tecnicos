@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+
+        background-image: url('fondo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        /* Color de respaldo si la imagen no carga */
+        background-color: #f0f0f0;
+    }
+
+    .contenedor {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      max-width: 420px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .nombre {
+      color: #667eea;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #667eea;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+
+    .boton:hover {
+      background-color: #556cd6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>Hola, soy <span class="nombre">Alfaro Alanis Ramiro Alejandro</span></h1>
+    <p>Bienvenido a mi página. Haz clic en el botón para usar mi calculadora.</p>
+    <a href="calculadora.html" class="boton">Ir a la calculadora</a>
+  </div>
+
+</body>
+</html>
